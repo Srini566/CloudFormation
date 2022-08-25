@@ -1,7 +1,7 @@
 Mappings:
   RegionMap:
     us-east-1:
-      AMI: ami-76f0061f
+      AMI: ami-0d5eff06f840b45e9
     us-west-1:
       AMI: ami-655a0a20
     eu-west-1:
@@ -15,7 +15,7 @@ Resources:
     Type: 'AWS::EC2::KeyPair'
     Properties:
       KeyName: MyKeyPair
-  Ec2Instance:
+  WebAppInstance:
     Type: 'AWS::EC2::Instance'
     Properties:
       KeyName: !Ref NewKeyPair
@@ -23,7 +23,6 @@ Resources:
         - RegionMap
         - !Ref 'AWS::Region'
         - AMI
-      UserData: !Base64 '80'
 Outputs:
   InstanceID:
     Description: The Instance ID
