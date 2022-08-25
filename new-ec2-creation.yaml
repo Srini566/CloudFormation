@@ -11,3 +11,15 @@ Outputs:
   InstanceID:
     Description: The Instance ID
     Value: !Ref WebAppInstance
+  AZ:
+    Description: Availability of the newly created EC2 Instance
+    Value: !GetAtt WebAppInstance.AvailabilityZone
+  PublicDNS:
+    Description: Public DNS of the newly created EC2 Instance
+    Value: !GetAtt WebAppInstance.PublicDnsName
+  PublicIP:
+    Description: Public IP of the newly created EC2 Instance
+    Value: !GetAtt WebAppInstance.PublicIp
+
+
+
